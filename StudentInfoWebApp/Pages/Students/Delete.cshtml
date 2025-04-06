@@ -1,0 +1,15 @@
+﻿@page
+@model StudentInfoWebApp.Pages.Students.DeleteModel
+@{
+    <h2>Delete Student</h2>
+
+    <p>Are you sure you want to delete: <strong>@Model.Student.Name</strong>?</p>
+    <p>Enrolled in: <strong>@Model.Student.Course?.Name</strong></p>
+
+    <form method="post">
+        <input type="hidden" asp-for="Student.StudentId" />
+        <button type="submit">Yes, Delete</button>
+        <a asp-page="Index">Cancel</a>
+    </form>
+
+}

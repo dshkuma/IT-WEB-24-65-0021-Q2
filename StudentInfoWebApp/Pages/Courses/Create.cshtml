@@ -1,0 +1,13 @@
+﻿@page
+@model StudentInfoWebApp.Pages.Courses.CreateModel
+@{
+    <h2>Add Course</h2>
+    <form method="post">
+        <label>Name</label>
+        <input asp-for="Course.Name" />
+        <label>Lecturer Name</label>
+        <input asp-for="Course.LecturerName" />
+        <button type="submit">Save</button>
+    </form>
+
+}

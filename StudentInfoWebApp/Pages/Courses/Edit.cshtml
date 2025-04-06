@@ -1,0 +1,21 @@
+﻿@page
+@model StudentInfoWebApp.Pages.Courses.EditModel
+@{
+    <h2>Edit Course</h2>
+
+    <form method="post">
+        <input type="hidden" asp-for="Course.CourseId" />
+
+        <label>Course Name</label>
+        <input asp-for="Course.Name" />
+        <br />
+
+        <label>Lecturer Name</label>
+        <input asp-for="Course.LecturerName" />
+        <br />
+
+        <button type="submit">Save</button>
+        <a asp-page="Index">Cancel</a>
+    </form>
+
+}

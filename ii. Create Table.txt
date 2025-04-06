@@ -1,0 +1,17 @@
+-- Create Courses Table
+CREATE TABLE Courses (
+    CourseID INT PRIMARY KEY,
+    Name NVARCHAR(100),
+    LecturerName NVARCHAR(100)
+);
+
+
+
+-- Create Students Table
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    Name NVARCHAR(100),
+    City NVARCHAR(100),
+    CourseID INT,
+    FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)
+);

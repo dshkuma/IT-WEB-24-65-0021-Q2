@@ -1,0 +1,47 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Students";
+}
+
+<h2>Students</h2>
+
+<!-- Search Form -->
+<form method="get">
+    <input type="text" name="SearchString" value="@Model.SearchString" placeholder="Search by name" />
+    <button type="submit">Search</button>
+</form>
+
+<br />
+
+<!-- Add Student Button -->
+<a class="btn btn-primary" href="/Students/Create">Add New Student</a>
+
+<br />
+<br />
+
+<!-- Students Table -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Course</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model.StudentList)
+        {
+            <tr>
+                <td>@student.Name</td>
+                <td>@student.City</td>
+                <td>@student.Course?.Name</td>
+                <td>
+                    <a href="/Students/Edit?id=@student.StudentId">Edit</a> |
+                    <a href="/Students/Delete?id=@student.StudentId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

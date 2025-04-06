@@ -1,0 +1,26 @@
+a)
+
+SELECT * FROM Students;
+
+
+b)
+
+SELECT StudentID, Name, City 
+FROM Students 
+WHERE City = 'Kandy';
+
+
+c)
+
+UPDATE Students 
+SET City = 'Galle' 
+WHERE StudentID = 4;
+
+
+d)
+
+SELECT S.StudentID, S.Name AS StudentName, S.City, 
+       C.Name AS CourseName, C.LecturerName
+FROM Students S
+JOIN Courses C ON S.CourseID = C.CourseID;
+

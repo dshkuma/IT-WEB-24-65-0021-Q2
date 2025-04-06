@@ -1,0 +1,15 @@
+﻿@page
+@model StudentInfoWebApp.Pages.Courses.DeleteModel
+@{
+
+    <h2>Delete Course</h2>
+
+    <p>Are you sure you want to delete the course: <strong>@Model.Course.Name</strong>?</p>
+
+    <form method="post">
+        <input type="hidden" asp-for="Course.CourseId" />
+        <button type="submit">Yes, Delete</button>
+        <a asp-page="Index">Cancel</a>
+    </form>
+
+}
